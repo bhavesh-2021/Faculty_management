@@ -1,0 +1,39 @@
+{% extends 'fam/base.html' %}
+
+{% block head %}
+ <style>
+.card .card-header {
+    background-color:#FAEBD7;
+}
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="card">
+    <div class="card-header" data-background-color="purple">
+        <h4 class="title">Attendance </h4>
+       
+    </div>
+    <div class="card-content table-responsive">
+        <table class="table">
+            <thead class="text-primary">
+                <th>Date</th>
+                <th>Status</th>
+                
+            </thead>
+            <tbody>
+            {% for u in attendance reversed%}    
+                <tr>
+                    
+                    <td>{{u.date}}</td>
+                    <td>{{u.status}}</td>
+
+                </tr>
+               
+            {% endfor %}
+
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}
